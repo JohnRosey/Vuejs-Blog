@@ -68,10 +68,10 @@
         <v-select
           v-model="select2"
           :hint="`${select2.plat}`"
-          :decrp="decrp"
+          :decription="decription"
           item-text="plat"
           item-value="plat"
-          label="Select"
+          label="Select2"
           persistent-hint
           return-object
           single-line
@@ -112,7 +112,7 @@
         dark
         color="primary"
         class="pl-5 pr-5"
-        large
+        large        
         @click="publishitem"
       >
         <span style="text-transform: capitalize">Publish</span>
@@ -157,7 +157,7 @@ export default {
           { state: 'Burkina Faso', abbr: 'BF' }
         ],
         select2: { plat: 'Something' },
-        decrp: [
+        decription: [
           { plat: 'Benin' },
           { plat: 'Senegal' },
           { plat: 'Mali' },
