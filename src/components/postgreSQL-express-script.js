@@ -11,7 +11,11 @@ export const createnewblog = async item => {
     content: JSON.stringify({
       title: item.content.title,
       src: item.content.src,
-      text: item.content.text
+      text: item.content.text,
+      type: item.content.type,
+      country: item.content.country,
+      city: item.content.city,
+      time: item.content.time
     })
   };
   let request = {

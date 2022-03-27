@@ -2,7 +2,7 @@
   <div class="form">
     <v-card-actions class="mx-auto pa-0">
       <v-btn color="primary" text @click="createnewpost">
-        <div class="form_title">Write an article</div>
+        <div class="form_title">Ajouter a Mongobd</div>
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn color="black" text @click="previewitem">
@@ -45,17 +45,66 @@
             />
           </v-card-text>
         </v-sheet>
+        
         <v-textarea
           auto-grow
           solo
-          label="Write an article...."
+          label="Ecrire Description."
           name="input-7-4"
           rows="12"
           flat
           class="form_content_text"
           v-model="item.content.text"
         ></v-textarea>
+        <v-container fluid>
+    <v-row align="center">
+      <v-col cols="6">
+        <v-subheader>
+          Selectionner un type de plat
+        </v-subheader>
+      </v-col>
+
+      <v-col cols="6">
+        <v-select
+          v-model="select2"
+          :hint="`${select2.plat}`"
+          :decrp="decrp"
+          item-text="plat"
+          item-value="plat"
+          label="Select"
+          persistent-hint
+          return-object
+          single-line
+        ></v-select>
+      </v-col>
+    </v-row>
+  </v-container>
+  <v-container fluid>
+    <v-row align="center">
+      <v-col cols="6">
+        <v-subheader>
+          Selectionner un Pays
+        </v-subheader>
+      </v-col>
+
+      <v-col cols="6">
+        <v-select
+          v-model="select"
+          :hint="`${select.state}, ${select.abbr}`"
+          :items="items"
+          item-text="state"
+          item-value="abbr"
+          label="Select"
+          persistent-hint
+          return-object
+          single-line
+        ></v-select>
+      </v-col>
+    </v-row>
+  </v-container>
       </v-card-text>
+      <!-- Fin des champs decriture de donnees -->
+
     </v-card>
     <v-card-actions class="mt-3">
       <v-btn
@@ -99,9 +148,24 @@ export default {
   props: ["item", "isEdited"],
   data() {
     return {
-      url: null
-    };
-  },
+      url: null,
+      select: { state: 'Burkina Faso', abbr: 'BF' },
+        items: [
+          { state: 'Benin', abbr: 'BN' },
+          { state: 'Senegal', abbr: 'SN' },
+          { state: 'Mali', abbr: 'ML' },
+          { state: 'Burkina Faso', abbr: 'BF' }
+        ],
+        select2: { plat: 'Something' },
+        decrp: [
+          { plat: 'Benin' },
+          { plat: 'Senegal' },
+          { plat: 'Mali' },
+          { plat: 'Burkina Faso' }
+        ],
+      }
+    },
+    
   // methods
   methods: {
     // upload image

@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <v-app-bar flat app>
-      <div class="dashboard_title">Tim Cook</div>
+      <div class="dashboard_title">Food panel</div>
       <v-spacer></v-spacer>
       <v-avatar>
         <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
@@ -160,6 +160,11 @@ export default {
       this.item.content.title = "";
       this.item.content.src = "";
       this.item.content.text = "";
+      this.item.content.type = "";
+      this.item.content.country="";
+      this.item.content.city="";
+      this.item.content.time="";
+
       this.file = "";
       this.selected = [];
       this.editedIndex = -1;
